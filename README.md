@@ -1,3 +1,10 @@
+### Personal Features
+
+- [x] Create root Folder
+- [x] Flask tree folders
+- [x] Vue stuffs inside Flask tree
+- [x] GitHub new repository
+
 ### Usage:
 ```bash
 To run the script open cmd and go into project folder.

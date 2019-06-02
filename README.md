@@ -2,6 +2,11 @@
 
 - [x] Create root Folder
 - [x] Flask tree folders
+  - [x] ```__init__.py ```
+  - [x] ```config.py ```
+  - [x] ```static ```
+    - [x] ```img ```
+  - [x] ```templates ```
 - [x] Vue stuffs inside Flask tree
 - [x] GitHub new repository
 

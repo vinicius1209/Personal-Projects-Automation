@@ -6,6 +6,7 @@
   - [x] ```config.py ```
   - [x] ```static ```
     - [x] ```img ```
+    - [x] ```js ```
   - [x] ```templates ```
 - [x] Vue stuffs inside Flask tree
 - [x] GitHub new repository

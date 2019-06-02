@@ -1,3 +1,11 @@
+### Imports
+```
+import argparse
+import sys
+import os
+import subprocess
+```
+
 ### Personal Features
 
 - [x] Create root Folder
@@ -17,7 +25,7 @@
 Before run the script, open app.py and edit path variable for your personal root folder projects
 
 To run the script open cmd and go into this project folder.
-Then type in cmd 'python app.py <name of your new project> <flask?> <vue?>'
+Then type in cmd 'python app.py -p [name of your new project] -f [flask] -v [vue] -g [GitHub]'
 
 During running GitHub username and password will be requested
 ```

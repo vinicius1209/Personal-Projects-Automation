@@ -19,10 +19,12 @@ import subprocess
 - [x] Vue stuffs inside Flask tree
 - [x] GitHub new repository
 
+## Before run
+- [ ] open app.py and edit path variable for your personal root folder projects
+- [ ] open aVenv.py and edit path variable for your virtualenv.exe inside script folder from your python instalation
+
 ### Usage:
 ```bash
-
-Before run the script, open app.py and edit path variable for your personal root folder projects
 
 To run the script open cmd and go into this project folder.
 Then type in cmd 'python app.py -p [name of your new project] -g [GitHub]'

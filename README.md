@@ -20,14 +20,13 @@ import subprocess
 - [x] GitHub new repository
 
 ## Before run
-- [ ] open app.py and edit path variable for your personal root folder projects
-- [ ] open aVenv.py and edit path variable for your virtualenv.exe inside script folder from your python instalation
+- [ ] open app.py and edit path/virtualenv variables for your personal root folder projects
 
 ### Usage:
 ```bash
 
 To run the script open cmd and go into this project folder.
-Then type in cmd 'python app.py -p [name of your new project] -g [GitHub]'
+Then type in cmd 'python app.py -p [name of your new project] -f[flask] -v[vue] -g [GitHub]'
 
 During running GitHub username and password will be requested
 ```

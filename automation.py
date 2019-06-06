@@ -8,7 +8,7 @@ class ProjectAutomation():
     def __init__(self, args):
         self.args = args
         self.path = "C:/Users/Vinícius Machado/Documents/GitHub/"
-        self.virtualenv = '"C:/Users/Vinícius Machado/AppData/Local/Programs/Python/Python37/Scripts/virtualenv.exe"'
+        self.requirements = []
         self.__create()
     
     def __create(self):
@@ -32,9 +32,13 @@ class ProjectAutomation():
         if self.args['github'] is not None:
             self.__gitHub()
         
+        os.chdir(self.path)
+        subprocess.call("code .", shell=True)  
+        
     def __flask(self):
         try:
             print("\n------------FLASK-------------\n")
+            self.requirements.append('FLASK')
             os.chdir(self.path)
             os.makedirs('static')
             os.makedirs('templates')
@@ -193,9 +197,9 @@ class ProjectAutomation():
     def __venv(self):
         try:
             print("\n------------Venv--------------\n")
-
+            
             # Install virtualenv
-            subprocess.call(self.virtualenv +  "  " + '"' + self.path + '/venv"' + " --no-site-packages", shell=True)   
+            subprocess.call('python -m venv {}'.format('"' + self.path + '/venv' + '"'), shell=True)   
 
             # Create setup.py file
             itl_flask_file = open(self.path + "/venv/Scripts/setup.py", "w+")
@@ -206,8 +210,8 @@ class ProjectAutomation():
                 "  version='1.0',\n"
             )
             
-            if self.args['flask'] is not None:
-                itl_flask_file.write("  install_requires=['FLASK']\n")
+            if self.requirements:
+                itl_flask_file.write("  install_requires=" + str(self.requirements) + "\n")
 
             itl_flask_file.write(")\n")
             itl_flask_file.close()
@@ -223,7 +227,6 @@ class ProjectAutomation():
 
     def __gitHub(self):
         print("\n-----------GitHub-------------\n")
-
         username = input("Username:")
         password = input("Password:")
         try:
@@ -232,3 +235,4 @@ class ProjectAutomation():
             print('GitHub repository created!')
         except Exception as e:
             print('Error while creating GitHub repository {}: {} \n'.format(self.args['proj_name'], e))
+

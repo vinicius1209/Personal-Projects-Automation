@@ -20,7 +20,8 @@ import subprocess
 - [x] GitHub new repository
 
 ## Before run
-- [ ] open app.py and edit path/virtualenv variables for your personal root folder projects
+- [ ] open app.py and edit path variable for your personal root folder projects
+- [ ] Python v3+
 
 ### Usage:
 ```bash

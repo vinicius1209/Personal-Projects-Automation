@@ -17,7 +17,9 @@ import subprocess
     - [x] ```js ```
   - [x] ```templates ```
 - [x] Vue stuffs inside Flask tree
-- [x] GitHub new repository
+  - [x] ```components```
+    - [x] ```router``` 
+- [x] New GitHub repository
 
 ## Before run
 - [ ] open app.py and edit path variable for your personal root folder projects

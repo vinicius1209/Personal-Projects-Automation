@@ -86,7 +86,7 @@ class ProjectAutomation():
                 os.makedirs('router')
                 
                 # Create simple component file
-                simple_comp = open(self.path + "/templates/components/home.vue.js", "w+")
+                simple_comp = open(self.path + "/templates/router/home.vue.js", "w+")
                 simple_comp.write(
                     "const Home = {\n" 
                     "   template: '<h2> {{ title }} </h2>', \n" 
@@ -163,7 +163,7 @@ class ProjectAutomation():
                         '  </div>\n'
                         '</body>\n'
                         '<script>\n'
-                        '  {% include "components/home.vue.js" %}\n'
+                        '  {% include "router/home.vue.js" %}\n'
                         '  {% include "router/index.js" %}\n'
                         '  {% include "main.js" %}\n'         
                         '</script>\n'

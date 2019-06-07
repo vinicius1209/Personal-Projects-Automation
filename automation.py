@@ -7,7 +7,7 @@ class ProjectAutomation():
 
     def __init__(self, args):
         self.args = args
-        self.path = "C:/Users/Vinícius Machado/Documents/GitHub/"
+        self.path = "C:/Users/55479/Documents/GitHub/"
         self.requirements = []
         self.__create()
     
@@ -83,12 +83,11 @@ class ProjectAutomation():
                 print("\n-------------VUE-------------\n")
                 os.chdir(self.path + '/templates')
                 os.makedirs('components')
-                os.chdir(self.path + '/templates/components')
                 os.makedirs('router')
                 
-                # Create router.js file                  
-                router_file = open(self.path + "/templates/components/router/index.js", "w+")
-                router_file.write(
+                # Create simple component file
+                simple_comp = open(self.path + "/templates/components/home.vue.js", "w+")
+                simple_comp.write(
                     "const Home = {\n" 
                     "   template: '<h2> {{ title }} </h2>', \n" 
                     "   data() { \n" 
@@ -98,7 +97,13 @@ class ProjectAutomation():
                     "   }, \n" 
                     "   methods: { \n" 
                     "   } \n" 
-                    "} \n\n" 
+                    "} \n"
+                )
+                simple_comp.close() 
+
+                # Create router.js file                  
+                router_file = open(self.path + "/templates/router/index.js", "w+")
+                router_file.write(
                     "const routes = [ \n" 
                     "   { path: '/', component: Home } \n" 
                     "] \n\n" 
@@ -110,8 +115,8 @@ class ProjectAutomation():
                 router_file.close() 
 
                 # Create main.js file
-                os.chdir(self.path + '/templates/components')                   
-                main_file = open(self.path + "/templates/components/main.js", "w+")
+                os.chdir(self.path + '/templates')                   
+                main_file = open(self.path + "/templates/main.js", "w+")
                 main_file.write(
                     "var home = new Vue({\n"
                     "   router, \n"
@@ -150,6 +155,7 @@ class ProjectAutomation():
                         '  <meta charset="utf-8">\n'
                         '  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>\n' 
                         '  <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>\n'
+						'<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">\n'
                         '</head>\n'
                         '<body>\n'
                         '  <div id="home">\n'        
@@ -157,8 +163,9 @@ class ProjectAutomation():
                         '  </div>\n'
                         '</body>\n'
                         '<script>\n'
-                        '  {% include "components/router/index.js" %}\n'
-                        '  {% include "components/main.js" %}\n'         
+                        '  {% include "components/home.vue.js" %}\n'
+                        '  {% include "router/index.js" %}\n'
+                        '  {% include "main.js" %}\n'         
                         '</script>\n'
                     )
                     index_file.close()   
